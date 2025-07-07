@@ -66,4 +66,15 @@ public class MyController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    // check if a course exists
+    @GetMapping("/course/{title}")
+    public ResponseEntity<Course> checkCourseExists(@PathVariable String title) {
+        Course course = courseService.getCourseByTitle(title);
+        if (course != null) {
+            return new ResponseEntity<>(course, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 }

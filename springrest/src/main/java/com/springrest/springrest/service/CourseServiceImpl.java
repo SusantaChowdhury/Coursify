@@ -49,4 +49,9 @@ public class CourseServiceImpl implements CourseService {
             courseDao.delete(existingCourse);
         }
     }
+
+    @Override
+    public Course getCourseByTitle(String title) {
+        return courseDao.findByTitle(title);
+    }
 }

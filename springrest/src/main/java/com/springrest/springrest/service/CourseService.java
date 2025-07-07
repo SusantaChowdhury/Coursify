@@ -14,4 +14,6 @@ public interface CourseService {
     public Course updateCourse(Course course);
 
     public void deleteCourse(long id);
+
+    public Course getCourseByTitle(String title);
 }
